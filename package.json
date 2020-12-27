@@ -98,6 +98,11 @@
   "peerDependencies": {
     "react": "^16.8.0 || ^17"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix && npm run lint"
+    }
+  },
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "npm run lint:fix"
