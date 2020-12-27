@@ -7,6 +7,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import { terser } from 'rollup-plugin-terser';
+import postcss from 'rollup-plugin-postcss';
+import copy from 'rollup-plugin-copy';
 
 // Custom package
 import { safePackageName } from './safePackageName';
@@ -48,24 +50,43 @@ export function createRollupConfig(options, callback) {
       format: options.format,
       name: umdName,
       sourcemap: true,
-      globals: { react: 'React' },
+      globals: { react: 'React', reactHookForm: 'react-hook-form' },
       exports: 'named',
     },
     plugins: [
       external(),
-      typescript({
-        tsconfig: options.tsconfig,
-        clean: true,
-      }),
+      postcss(),
       resolve(),
       options.format === 'umd' &&
         commonjs({
-          include: /\/node_modules\//,
+          include: 'node_modules/**',
         }),
-      options.env !== undefined &&
-        replace({
-          'process.env.NODE_ENV': JSON.stringify(options.env),
-        }),
+      typescript({
+        tsconfig: options.tsconfig,
+        clean: true,
+        tsconfigDefaults: {
+          exclude: [
+            '**/*.scss',
+            '**/*.spec.ts',
+            '**/*.test.ts',
+            '**/*.stories.ts',
+            '**/*.spec.tsx',
+            '**/*.test.tsx',
+            '**/*.stories.tsx',
+            'node_modules',
+            'bower_components',
+            'jspm_packages',
+            'dist',
+          ],
+          compilerOptions: {
+            sourceMap: true,
+            declaration: true,
+          },
+        },
+      }),
+      replace({
+        'process.env.NODE_ENV': JSON.stringify(options.env),
+      }),
       sourcemaps(),
       shouldMinify &&
         terser({
@@ -74,6 +95,27 @@ export function createRollupConfig(options, callback) {
             drop_console: true,
           },
         }),
+      copy({
+        targets: [
+          { src: 'LICENSE', dest: 'dist' },
+          { src: 'README.md', dest: 'dist' },
+          {
+            src: 'package.json',
+            dest: 'dist',
+            transform: (content) => {
+              const {
+                scripts,
+                devDependencies,
+                husky,
+                release,
+                engines,
+                ...keep
+              } = JSON.parse(content.toString());
+              return JSON.stringify(keep, null, 2);
+            },
+          },
+        ],
+      }),
     ].filter(Boolean),
   };
 
