@@ -39,7 +39,9 @@ export const InputCheckbox: React.FC<FieldBase> = (
         <input
           id={props.id}
           type="checkbox"
-          className={'form-control ' + (errors[props.name] ? 'is-invalid ' : ' ')}
+          className={
+            'form-control ' + (errors[props.name] ? 'is-invalid ' : ' ')
+          }
           name={props.name}
           checked={checkboxValue}
           onChange={(_value: any) => {

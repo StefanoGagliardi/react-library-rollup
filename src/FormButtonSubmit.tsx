@@ -25,7 +25,9 @@ const FormButonSubmit: React.FC<ButtonSubmit> = (
     <div className="row">
       <div className={rowClass}>
         <div
-          className={'fg__button-submit-wrapper ' + (loading ? 'with-loader ' : ' ')}
+          className={
+            'fg__button-submit-wrapper ' + (loading ? 'with-loader ' : ' ')
+          }
         >
           {!props?.dom ? (
             <input

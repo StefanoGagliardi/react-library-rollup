@@ -95,7 +95,11 @@ export const InputSelect: React.FC<FieldBase> = (
       <div className="fg__select-wrapper">
         <select
           id={props.id}
-          className={'form-control ' + 'fg__input-select ' + (errors[props.name] ? 'is-invalid ' : ' ')}
+          className={
+            'form-control ' +
+            'fg__input-select ' +
+            (errors[props.name] ? 'is-invalid ' : ' ')
+          }
           name={props.name}
           ref={register(validation)}
           autoComplete={props.autocomplete ? props.autocomplete : 'off'}
@@ -120,7 +124,9 @@ export const InputSelect: React.FC<FieldBase> = (
           })}
         </select>
         <div
-        className={'loader ' + 'fg__input-select ' + (loading ? 'loader-active ' : ' ')}
+          className={
+            'loader ' + 'fg__input-select ' + (loading ? 'loader-active ' : ' ')
+          }
         >
           <span></span>
         </div>
