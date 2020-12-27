@@ -71,20 +71,15 @@ Elenco di script e pacchetti utility per lo sviluppo e mantenimento della repo.
 1. ```npm run package:check```, controlla la qualità del package (skypack/package-check).
 2. ```npm run bundlesize``` - Esegue una build e controlla la grandezza rispetto alla configurazione. La configurazione viene definita nel package.json
 3. ```npm run clean``` - Pulisco la cartella dist
-4 ```npm ru cp:dts``` - Usando il pacchetto copyfiles copio i tipi Typescript del plugin
-
+4. ```npm run cp:dts``` - Usando il pacchetto copyfiles copio i tipi Typescript del plugin
 
 ## Scripts
 
-Elenco degli scripts disponibili in NPM
-## TODO Configurazione
+Elenco degli scripts disponibili in NPM:
 
-Script:
+1. ```npm run bundlesize``` - Esegue la build e il controllo del peso secondo i parametri definiti nel package.
+2. ```check:package```- Controlla il contenuto e la sintassi del package.json
 
-1. npm run package:check
-2. npm run bundlesize
+## Testing
 
-MACRO:
-
-1. Test (Jest e Cypress)
-2. ChangeLog e CI
+Per i test verrà usata il solito ```Jest``` e ```Cypress``` [Visita il sito](https://www.cypress.io/).
