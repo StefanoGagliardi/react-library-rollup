@@ -72,7 +72,7 @@ export function createRollupConfig(options, callback) {
             '**/*.stories.ts',
             '**/*.spec.tsx',
             '**/*.test.tsx',
-            '**/*.stories.tsx',
+            './src/*.stories.tsx',
             'node_modules',
             'bower_components',
             'jspm_packages',

@@ -19,7 +19,7 @@ const formConfigGrid: FormConfiguration = {
     endpoint: 'http://localhost:5000/formSubmit',
     method: 'POST',
     backend: true,
-    onSubmit: (data: any) => {
+    onSubmit: (_data: any) => {
       // console.log('Custom submit callback in useCallback', data);
     },
   },
@@ -126,7 +126,7 @@ const formConfingValidation: FormConfiguration = {
     endpoint: 'http://localhost:5000/formSubmit',
     method: 'POST',
     backend: true,
-    onSubmit: (data: any) => {
+    onSubmit: (_data: any) => {
       // console.log('Custom submit callback in useCallback', data);
     },
   },
@@ -239,10 +239,8 @@ const formConfigFields: FormConfiguration = {
     endpoint: 'http://localhost:5000/formSubmit',
     method: 'POST',
     backend: true,
-    onSubmit: (data: any) => {
-      // console.log('Custom submit callback in useCallback', data);
-      return data;
-    },
+    onSubmit: (data: any) =>
+      /* console.log('Custom submit callback in useCallback', data);*/ data,
   },
   fields: [
     {
