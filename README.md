@@ -29,7 +29,7 @@ Pacchetti core:
 2. `@babel/core` e `@babel/plugin-transform-runtime` - Transpiler core
 3. Rollup.js con le seguenti estensioni: plugin-commonjs, plugin-node-resolver, plugin-replace
 
-**File di configurazione di Rollup**
+**File di configurazione di Rollup:**
 
 Rollup.js si basa sui files di configurazione contenuti nella cartella `./scripts/rollup`.
 Per maggiori info sulle varie [esportazioni javascript](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
@@ -63,6 +63,8 @@ Entrambe queste estensioni non hanno file di configurazione ma vegono configurat
 
 Per un test grafico e dimostrazione si usa il pacchetto. Storybook. Tutti i file con estensione .stories.tsx sono esclusi dalla build della production.
 Va bene usato anche durante lo sviluppo come hot reload.
+
+Storybook si configura attraverso il file `main.js` contenuto all'interno della fold `.storybook`.
 
 ## Utility
 
@@ -108,6 +110,6 @@ Per i test verrà usata il solito `Jest` e `Cypress` [Visita il sito](https://ww
 
 Jest è stato integrato con Enzyme.
 
-**BYPASS LINT X GIT**
+**BYPASS LINT X GIT:**
 
 Dal package.json rimuovere la sezione relativa a `husky`
