@@ -71,11 +71,6 @@ Elenco di script e pacchetti utility per lo sviluppo e mantenimento della repo.
 1. `npm run package:check`, controlla la qualità del package (skypack/package-check).
 2. `npm run bundlesize` - Esegue una build e controlla la grandezza rispetto alla configurazione. La configurazione viene definita nel package.json
 3. `npm run clean` - Pulisco la cartella dist
-4. `npm run cp:dts` - Usando il pacchetto copyfiles copio i tipi Typescript del plugin
-5. `npm run dev` - Avvia lo sviluppo con storybook
-6. `npm run test` - Esegue i test
-7. `npm run lint` - Controlla errori di sintatti e di forma
-8. `npm run lint:fix` - Risolve, dove possibile, eventuali errori di sintatti o forma
 
 ## Scripts
 
@@ -83,6 +78,27 @@ Elenco degli scripts disponibili in NPM:
 
 1. `npm run bundlesize` - Esegue la build e il controllo del peso secondo i parametri definiti nel package.
 2. `check:package`- Controlla il contenuto e la sintassi del package.json
+3. `npm run cp:dts` - Usando il pacchetto copyfiles copio i tipi Typescript del plugin
+4. `npm run dev` - Avvia lo sviluppo con storybook
+5. `npm run test` - Esegue i test
+6. `npm run build` - Crea direttamenta attraverso Rollup.js la build del progetto in vari formati js (CommoJs, umd, esnext)
+7. `npm run prepublishOnly` - Crea al build per la pubblicazione, quindi prima esegue controlli con il linter, avvia i test e poi crea la build.
+8. `npm run lint` - Controlla errori di sintatti e di forma
+9. `npm run lint:fix` - Risolve, dove possibile, eventuali errori di sintatti o forma
+
+## Build
+
+La build è una transpilazione da Typescript a ES5 nei seguenti formati:
+
+1. CommonJs - Sviluppo e produzione
+2. ESM - Sviluppo e produzione
+3. UMD - Sviluppo e produzione
+4. ie11 - Sviluppo e produione
+
+Vengono inoltre clonati tutti i `Types` di Typescript.  
+I tipi all'interno del `src` devono essere collocati nella cartella `/src/types/`
+
+Inoltre è possibile attraverso il comando `npm run check:package` creare un build e controllarne il peso rispetto a quello massimo impostto.
 
 ## Testing
 
