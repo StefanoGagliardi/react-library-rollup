@@ -28,7 +28,7 @@
   "scripts": {
     "bundlesize": "npm run build:modern && bundlesize",
     "check:package": "package-check",
-    "cp:dts": "copyfiles -f ./src/**/*.d.ts dist && rimraf dist/**/*.test.d.ts",
+    "cp:dts": "copyfiles -f ./src/types/*.d.ts dist/types && rimraf dist/types/*.test.d.ts",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "lint:types": "tsc --noEmit",

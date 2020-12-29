@@ -4,7 +4,7 @@ Boilerplate for Resact with Typescript with rollup.js (not webpack)
 
 **peerDependencies:**
 
-Nel ```package.json``` la voce ```peerDependencies``` indica che il nostro bundle (libreria) ha bisogno delle seguenti dipendenze per poter funzionare. Il caso d'uso d'esempio (e di questo caso) e per lo sviluppo di plugin.
+Nel `package.json` la voce `peerDependencies` indica che il nostro bundle (libreria) ha bisogno delle seguenti dipendenze per poter funzionare. Il caso d'uso d'esempio (e di questo caso) e per lo sviluppo di plugin.
 
 Essendo un plugin React la "peerDependencie" sarà React (versione 16 o 17)
 
@@ -26,16 +26,16 @@ Le principali dipendenze per poter usare Rollup.js in modo da poter trasformare 
 Pacchetti core:
 
 1. Core-js. [More info](https://www.npmjs.com/package/core-js)
-2. ```@babel/core``` e ```@babel/plugin-transform-runtime``` - Transpiler core
+2. `@babel/core` e `@babel/plugin-transform-runtime` - Transpiler core
 3. Rollup.js con le seguenti estensioni: plugin-commonjs, plugin-node-resolver, plugin-replace
 
 **File di configurazione di Rollup**
 
-Rollup.js si basa sui  files di configurazione contenuti nella cartella ```./scripts/rollup```.
+Rollup.js si basa sui files di configurazione contenuti nella cartella `./scripts/rollup`.
 Per maggiori info sulle varie [esportazioni javascript](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
 
-1. ```rollup.config.js``` - Configurazione per esportare in : cjs, amd, umd.
-2. ```createRollupConfig.js``` - Funzione che genera la dist alla quale passo l'oggetto di config definito nel file al punto 1.
+1. `rollup.config.js` - Configurazione per esportare in : cjs, amd, umd.
+2. `createRollupConfig.js` - Funzione che genera la dist alla quale passo l'oggetto di config definito nel file al punto 1.
 
 Esistono altre due file di configurazione per Inernet Explorer 11 (con relativo file tsconfig.ie11.json) e per ESM (Ecma Standard Module, import - export).
 
@@ -43,43 +43,55 @@ Esistono altre due file di configurazione per Inernet Explorer 11 (con relativo 
 
 **Prettier & Eslint:**
 
-Per una correta formattazione e sintassi del codice si userà ```prettier``` e ```eslint```. Entrmambi hanno il file di configurazione e diversi plugin. Nello specifico i plugin usati sono:
+Per una correta formattazione e sintassi del codice si userà `prettier` e `eslint`. Entrmambi hanno il file di configurazione e diversi plugin. Nello specifico i plugin usati sono:
 
-1. ```@typescript-eslint/eslint-plugin``` & ```@typescript-eslint/parser```
-2. ```eslint-config-prettier```
+1. `@typescript-eslint/eslint-plugin` & `@typescript-eslint/parser`
+2. `eslint-config-prettier`
    Disattiva tutte le regole non necessarie o che potrebbero entrare in conflitto con Prettier. Nota che questa configurazione disattiva solo le regole, quindi ha senso usarla solo insieme a qualche altra configurazione.
-3. ```eslint-plugin-cypress``` - Supporto alla libreria di test Cypress
-4. ```eslint-plugin-prettier``` - Da usare perforza con il punto 2. Quando la formattazione non "matcha" segnala i problemi come singoli problemi eslint.
-5. ```eslint-plugin-react``` - Rules preset for React
-6. ```eslint-plugin-react-hooks``` - React rule extension for hooks
+3. `eslint-plugin-cypress` - Supporto alla libreria di test Cypress
+4. `eslint-plugin-prettier` - Da usare perforza con il punto 2. Quando la formattazione non "matcha" segnala i problemi come singoli problemi eslint.
+5. `eslint-plugin-react` - Rules preset for React
+6. `eslint-plugin-react-hooks` - React rule extension for hooks
 
 **Github - Husky & Staged:**
 
-Grazie a una combo di ```husky``` e ```lint-staged``` il codice deve ad ogni commit viene controllato e lintato (fix) prima di fare un commit.
+Grazie a una combo di `husky` e `lint-staged` il codice deve ad ogni commit viene controllato e lintato (fix) prima di fare un commit.
 
-Entrambe queste estensioni non hanno file di configurazione ma vegono configurati nel ```package.json```
+Entrambe queste estensioni non hanno file di configurazione ma vegono configurati nel `package.json`
 
+## Storybook
 
-
-
-
+Per un test grafico e dimostrazione si usa il pacchetto. Storybook. Tutti i file con estensione .stories.tsx sono esclusi dalla build della production.
+Va bene usato anche durante lo sviluppo come hot reload.
 
 ## Utility
 
 Elenco di script e pacchetti utility per lo sviluppo e mantenimento della repo.
 
-1. ```npm run package:check```, controlla la qualità del package (skypack/package-check).
-2. ```npm run bundlesize``` - Esegue una build e controlla la grandezza rispetto alla configurazione. La configurazione viene definita nel package.json
-3. ```npm run clean``` - Pulisco la cartella dist
-4. ```npm run cp:dts``` - Usando il pacchetto copyfiles copio i tipi Typescript del plugin
+1. `npm run package:check`, controlla la qualità del package (skypack/package-check).
+2. `npm run bundlesize` - Esegue una build e controlla la grandezza rispetto alla configurazione. La configurazione viene definita nel package.json
+3. `npm run clean` - Pulisco la cartella dist
+4. `npm run cp:dts` - Usando il pacchetto copyfiles copio i tipi Typescript del plugin
+5. `npm run dev` - Avvia lo sviluppo con storybook
+6. `npm run test` - Esegue i test
+7. `npm run lint` - Controlla errori di sintatti e di forma
+8. `npm run lint:fix` - Risolve, dove possibile, eventuali errori di sintatti o forma
 
 ## Scripts
 
 Elenco degli scripts disponibili in NPM:
 
-1. ```npm run bundlesize``` - Esegue la build e il controllo del peso secondo i parametri definiti nel package.
-2. ```check:package```- Controlla il contenuto e la sintassi del package.json
+1. `npm run bundlesize` - Esegue la build e il controllo del peso secondo i parametri definiti nel package.
+2. `check:package`- Controlla il contenuto e la sintassi del package.json
 
 ## Testing
 
-Per i test verrà usata il solito ```Jest``` e ```Cypress``` [Visita il sito](https://www.cypress.io/).
+Per i test verrà usata il solito `Jest` e `Cypress` [Visita il sito](https://www.cypress.io/).
+
+**Integrati test TS in Jest:**
+
+Jest è stato integrato con Enzyme.
+
+**BYPASS LINT X GIT**
+
+Dal package.json rimuovere la sezione relativa a `husky`
