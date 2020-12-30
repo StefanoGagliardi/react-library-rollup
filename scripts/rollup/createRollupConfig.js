@@ -9,6 +9,7 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
+import strip from 'rollup-plugin-strip';
 
 // Custom package
 import { safePackageName } from './safePackageName';
@@ -26,6 +27,7 @@ export function createRollupConfig(options, callback) {
   const shouldMinify = options.minify || options.env === 'production';
   const tsconfigPath = options.tsconfig || 'tsconfig.json';
   const tsconfigJSON = ts.readConfigFile(tsconfigPath, ts.sys.readFile).config;
+  const isProduction = options.env === 'production' ? true : false;
   const tsCompilerOptions = ts.parseJsonConfigFileContent(
     tsconfigJSON,
     ts.sys,
@@ -116,6 +118,24 @@ export function createRollupConfig(options, callback) {
           },
         ],
       }),
+      isProduction
+        ? strip({
+            // set this to `false` if you don't want to
+            // remove debugger statements
+            debugger: true,
+
+            // defaults to `[ 'console.*', 'assert.*' ]`
+            functions: ['console.log', 'assert.*', 'debug'],
+
+            // remove one or more labeled blocks by name
+            // defaults to `[]`
+            labels: ['unittest'],
+
+            // set this to `false` if you're not using sourcemaps –
+            // defaults to `true`
+            sourceMap: true,
+          })
+        : null,
     ].filter(Boolean),
   };
 
