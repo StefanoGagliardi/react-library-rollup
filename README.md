@@ -53,10 +53,12 @@ Per una correta formattazione e sintassi del codice si userà `prettier` e `esli
 5. `eslint-plugin-react` - Rules preset for React
 6. `eslint-plugin-react-hooks` - React rule extension for hooks
 
+**NB:** Nelle regole di eslint sono ammessi tutti i tipi di console(error, warn, log). In fase di compilazione (per la prod) i `console.log()` vengino strippati.
+
 **Github - Husky & Staged:**
 
 Grazie a una combo di `husky` e `lint-staged` il codice deve ad ogni commit viene controllato e lintato (fix) prima di fare un commit.
-
+s
 Entrambe queste estensioni non hanno file di configurazione ma vegono configurati nel `package.json`
 
 ## Storybook
@@ -104,9 +106,12 @@ Inoltre è possibile attraverso il comando `npm run check:package` creare un bui
 
 ## Testing
 
+**NB:** Enzyme non ha ancora rilasciato `Adapter()` ufficiale per la versione 17 di React.  
+Quindi il progtto è stato "wongraded" alla versione di React e React Dom `React 16.14.0`.
+
 Per i test verrà usata il solito `Jest` e `Cypress` [Visita il sito](https://www.cypress.io/).
 
-**Integrati test TS in Jest:**
+**JEST + ENZYME:**
 
 Jest è stato integrato con Enzyme.
 

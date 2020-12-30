@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Hi, first Typescript unit test renders snapshots, too 1`] = `ShallowWrapper {}`;

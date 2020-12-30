@@ -1,4 +1,3 @@
-// Core
 import React, { ReactElement, useCallback } from 'react';
 
 // Third packages

@@ -29,7 +29,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/display-name': 'warn',
     'react/prop-types': 'off',
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-console': ['error', { allow: ['warn', 'error', "log"] }],
   },
   overrides: [
     {

@@ -43,3 +43,5 @@ export const FormHeading: React.FC<FormHeadingProps> = (
     </header>
   );
 };
+
+export default FormHeading;
