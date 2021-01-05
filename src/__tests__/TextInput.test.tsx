@@ -6,11 +6,7 @@ import { mount } from 'enzyme';
 import { useForm, FormProvider } from 'react-hook-form';
 import InputText from '../fields/InputText';
 
-console.log("Node env", env.process);
-
 describe('Test Enzyme and debug with a TestComponent', () => {
-
-  
   it('RHF - Create context - wrapper component', () => {
     const RHFContext: React.FC = (): ReactElement => {
       return <div className="rhf__context_wrapper">wrapper</div>;

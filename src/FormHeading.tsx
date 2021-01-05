@@ -23,7 +23,7 @@ export const FormHeading: React.FC<FormHeadingProps> = (
   if (title === '') {
     return (
       <div className="row">
-        <p className="fg__subtitle">{newLine(subTitle as string)}</p>
+        <h3 className="fg__subtitle">{newLine(subTitle as string)}</h3>
       </div>
     );
   }
@@ -38,8 +38,8 @@ export const FormHeading: React.FC<FormHeadingProps> = (
 
   return (
     <header>
-      <h3>{title}</h3>
-      <p>{subTitle}</p>
+      <h3 className="fg__title">{title}</h3>
+      <p className="fg__subtitle">{subTitle}</p>
     </header>
   );
 };

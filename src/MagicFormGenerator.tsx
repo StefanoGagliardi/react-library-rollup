@@ -20,9 +20,6 @@ export const MagicFormGenerator: React.FC<MagicFormGeneratorProps> = (
   const { submit, buttonSubmit } = form;
 
   // const [loading, setLoading] = useState<boolean>(false);
-  
-  // Test Rollup.js strip plugin
-  console.log("MagicFormGenerator rollup.js SRIP TEST");
 
   const methods = useForm();
 

@@ -38,7 +38,7 @@
     "build:esm": "rollup -c ./scripts/rollup/rollup.esm.config.js",
     "build:ie11": "rollup -c ./scripts/rollup/rollup.ie11.config.js",
     "pre-commit": "lint-staged",
-    "prepublishOnly": "npm run lint && npm run lint:types && npm test && npm run build",
+    "prepublishOnly": "npm run lint:fix && npm run lint && npm run lint:types && npm test && npm run build",
     "dev": "npm run storybook",
     "storybook": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",

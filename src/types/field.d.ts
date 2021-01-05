@@ -16,6 +16,7 @@ export interface FieldBase extends FieldSelect {
   placeholder?: string;
   validation: FieldValidation;
   autocomplete?: string;
+  label?: string;
 }
 
 export interface Field extends FieldBase {

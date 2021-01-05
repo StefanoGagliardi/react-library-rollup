@@ -68,7 +68,6 @@ export const FormFields: React.FC<FormFieldsProps> = (
                     <div className={colName} key={index}>
                       <div className="fg__fields-field">
                         <>
-                          <label>{field.label}</label>
                           {field.type == 'text' ? (
                             <InputText
                               name={field.name}
@@ -76,64 +75,80 @@ export const FormFields: React.FC<FormFieldsProps> = (
                               placeholder={field.placeholder}
                               validation={field.validation}
                               autocomplete={field.autocomplete}
+                              label={field.label}
                             />
                           ) : (
                             <></>
                           )}
                           {field.type == 'email' ? (
-                            <InputEmail
-                              name={field.name}
-                              id={field.id}
-                              placeholder={field.placeholder}
-                              validation={field.validation}
-                              autocomplete={field.autocomplete}
-                            />
+                            <>
+                              <label>{field.label}</label>
+                              <InputEmail
+                                name={field.name}
+                                id={field.id}
+                                placeholder={field.placeholder}
+                                validation={field.validation}
+                                autocomplete={field.autocomplete}
+                              />
+                            </>
                           ) : (
                             <></>
                           )}
                           {field.type == 'password' ? (
-                            <InputPassword
-                              name={field.name}
-                              id={field.id}
-                              placeholder={field.placeholder}
-                              validation={field.validation}
-                              autocomplete={field.autocomplete}
-                            />
+                            <>
+                              <label>{field.label}</label>
+                              <InputPassword
+                                name={field.name}
+                                id={field.id}
+                                placeholder={field.placeholder}
+                                validation={field.validation}
+                                autocomplete={field.autocomplete}
+                              />
+                            </>
                           ) : (
                             <></>
                           )}
                           {field.type == 'select' ? (
-                            <InputSelect
-                              name={field.name}
-                              id={field.id}
-                              placeholder={field.placeholder}
-                              validation={field.validation}
-                              autocomplete={field.autocomplete}
-                              data={field.data}
-                              fetchDataFromUrl={field.fetchDataFromUrl}
-                            />
+                            <>
+                              <label>{field.label}</label>
+                              <InputSelect
+                                name={field.name}
+                                id={field.id}
+                                placeholder={field.placeholder}
+                                validation={field.validation}
+                                autocomplete={field.autocomplete}
+                                data={field.data}
+                                fetchDataFromUrl={field.fetchDataFromUrl}
+                              />
+                            </>
                           ) : (
                             <></>
                           )}
                           {field.type == 'textarea' ? (
-                            <InputTextarea
-                              name={field.name}
-                              id={field.id}
-                              placeholder={field.placeholder}
-                              validation={field.validation}
-                              autocomplete={field.autocomplete}
-                            />
+                            <>
+                              <label>{field.label}</label>
+                              <InputTextarea
+                                name={field.name}
+                                id={field.id}
+                                placeholder={field.placeholder}
+                                validation={field.validation}
+                                autocomplete={field.autocomplete}
+                              />
+                            </>
                           ) : (
                             <></>
                           )}
                           {field.type == 'checkbox' ? (
-                            <InputCheckbox
-                              name={field.name}
-                              id={field.id}
-                              placeholder={field.placeholder}
-                              validation={field.validation}
-                              autocomplete={field.autocomplete}
-                            />
+                            <>
+                              <label>{field.label}</label>
+                              <InputCheckbox
+                                name={field.name}
+                                id={field.id}
+                                placeholder={field.placeholder}
+                                validation={field.validation}
+                                autocomplete={field.autocomplete}
+                              />
+                            </>
                           ) : (
                             <></>
                           )}
