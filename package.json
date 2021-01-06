@@ -62,10 +62,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StefanoGagliardi/react-form-generator-web.git"
+    "url": "git+https://github.com/StefanoGagliardi/react-library-rollup.git"
   },
   "bugs": {
-    "url": "https://github.com/StefanoGagliardi/react-form-generator-web/issues"
+    "url": "https://github.com/StefanoGagliardi/react-library-rollup/issues"
   },
   "homepage": "https://gagliardistefano.it/react-form/index.html",
   "author": "Stefano Gagliardi <stefano.gagliardi@sitisrl.it>",
@@ -146,11 +146,6 @@
   "peerDependencies": {
     "react": "^16.8.0 || ^17",
     "react-hook-form": "<= ^6.13.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:fix && npm run lint"
-    }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [

@@ -119,3 +119,10 @@ Studiare e partire facendo "UNIT TEST" base. Anche vero che per l'esigenze del p
 **BYPASS LINT X GIT:**
 
 Dal package.json rimuovere la sezione relativa a `husky`
+
+
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix && npm run lint"
+    }
+  },
