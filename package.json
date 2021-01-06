@@ -1,6 +1,6 @@
 {
   "name": "react-magic-form",
-  "version": "0.4.0",
+  "version": "0.5.2",
   "description": "Boilerplate for Resact with Typescript with rollup.js (not webpack)",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -25,7 +25,7 @@
       "require": "./dist/index.ie11.js"
     }
   },
-  "scripts": {  
+  "scripts": {
     "bundlesize": "npm run build:modern && bundlesize",
     "check:package": "package-check",
     "cp:dts": "copyfiles -f ./src/types/*.d.ts dist && rimraf dist/types/*.test.d.ts",
