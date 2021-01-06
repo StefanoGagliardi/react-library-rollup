@@ -121,8 +121,16 @@ Studiare e partire facendo "UNIT TEST" base. Anche vero che per l'esigenze del p
 Dal package.json rimuovere la sezione relativa a `husky`
 
 
-  "husky": {
+"husky": {
     "hooks": {
       "pre-commit": "npm run lint:fix && npm run lint"
     }
   },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "npm run lint:fix"
+    ],
+    "*.{md,json,yml}": [
+      "prettier --write"
+    ]
+  }
