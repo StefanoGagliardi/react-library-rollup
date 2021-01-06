@@ -1,6 +1,6 @@
 {
   "name": "react-magic-form",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Boilerplate for Resact with Typescript with rollup.js (not webpack)",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
