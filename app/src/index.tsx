@@ -1,7 +1,7 @@
 // Import core
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./pages/app";
+import App from "./app";
 
 // import third parts
 
