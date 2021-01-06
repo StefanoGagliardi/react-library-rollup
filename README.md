@@ -58,15 +58,8 @@ Per una correta formattazione e sintassi del codice si userà `prettier` e `esli
 **Github - Husky & Staged:**
 
 Grazie a una combo di `husky` e `lint-staged` il codice deve ad ogni commit viene controllato e lintato (fix) prima di fare un commit.
-s
+
 Entrambe queste estensioni non hanno file di configurazione ma vegono configurati nel `package.json`
-
-## Storybook
-
-Per un test grafico e dimostrazione si usa il pacchetto. Storybook. Tutti i file con estensione .stories.tsx sono esclusi dalla build della production.
-Va bene usato anche durante lo sviluppo come hot reload.
-
-Storybook si configura attraverso il file `main.js` contenuto all'interno della fold `.storybook`.
 
 ## Utility
 
@@ -111,9 +104,17 @@ Quindi il progtto è stato "wongraded" alla versione di React e React Dom `React
 
 Per i test verrà usata il solito `Jest` e `Cypress` [Visita il sito](https://www.cypress.io/).
 
+**e2e Cypress:** Ho deciso di integrare per la maggior parte test **e2e** e non **unit test** t1ramite Cypress.  
+I test di Cypress vengono assegnati tramite URL. Quindi è necessario compilare e avviare il plugin nel browser.  
+Quindi è necessaria una configurazione TS per integrare la libreria compilata in "componenti esempio" e avviarli.
+Tutta la configurazione per l'app di test e2e si trova nella folder `./app`.  
+
+Per testare l'integrazione della library come "pacchetto" `import * from 'react-magic-form';` esiste un comando
+
 **JEST + ENZYME:**
 
-Jest è stato integrato con Enzyme.
+Jest è stato integrato con Enzyme. Pensavo fossero più easy, ma essendo complesso il plugin i tes non sono immediati per un noob.
+Studiare e partire facendo "UNIT TEST" base. Anche vero che per l'esigenze del progetto e pe un fattore tempo i test migliori sono quelli **e2e**. 
 
 **BYPASS LINT X GIT:**
 

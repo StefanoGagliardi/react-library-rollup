@@ -1,6 +1,6 @@
 {
-  "name": "react-library-rollup",
-  "version": "0.1.0",
+  "name": "react-magic-form",
+  "version": "0.3.0",
   "description": "Boilerplate for Resact with Typescript with rollup.js (not webpack)",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -40,7 +40,6 @@
     "pre-commit": "lint-staged",
     "prepublishOnly": "npm run lint:fix && npm run lint && npm run lint:types && npm test && npm run build",
     "dev": "npm run storybook",
-    "storybook": "start-storybook -p 9001 -s ./src/assets -c .storybook",
     "coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test": "jest --config ./scripts/jest/jest.config.js",
     "test:coverage": "npm run test -- --coverage",
@@ -51,7 +50,8 @@
     "cypress:open": "cypress open",
     "cypress:parallel": "cypress-parallel -s cypress -t 4 -d -a",
     "changeset": "changeset",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "start:app": "npm run build:esm && npm link && npm --cwd node_modules/react link && npm --cwd ./app link react react-magic-form && npm --cwd ./app && npm --cwd ./app run start"
   },
   "keywords": [
     "rollup.js",
@@ -143,7 +143,6 @@
   ],
   "peerDependencies": {
     "react": "^16.8.0 || ^17",
-    "react-dom": "<= ^16.8.0",
     "react-hook-form": "<= ^6.13.1"
   },
   "husky": {
