@@ -1,0 +1,55 @@
+{
+  "name": "react-magic-form",
+  "version": "0.8.0",
+  "description": "Boilerplate for Resact with Typescript with rollup.js (not webpack)",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "umd:main": "dist/index.umd.production.min.js",
+  "unpkg": "dist/index.umd.production.min.js",
+  "jsdelivr": "dist/index.umd.production.min.js",
+  "jsnext:main": "dist/index.esm.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "sideEffects": true,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./dist/index.ie11": {
+      "import": "./dist/index.ie11.js",
+      "require": "./dist/index.ie11.js"
+    }
+  },
+  "keywords": [
+    "rollup.js",
+    "react",
+    "typescript",
+    "library",
+    "npm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanoGagliardi/react-library-rollup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/StefanoGagliardi/react-library-rollup/issues"
+  },
+  "homepage": "https://gagliardistefano.it/react-form/index.html",
+  "author": "Stefano Gagliardi <stefano.gagliardi@sitisrl.it>",
+  "license": "MIT",
+  "bundlesize": [
+    {
+      "path": "./dist/index.cjs.production.min.js",
+      "maxSize": "60.5 kB"
+    }
+  ],
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17",
+    "react-hook-form": "<= ^6.13.1"
+  }
+}
