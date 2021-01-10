@@ -134,3 +134,5 @@ Dal package.json rimuovere la sezione relativa a `husky`
       "prettier --write"
     ]
   }
+
+  "prepublishOnly": "npm run lint:fix && npm run lint && npm run lint:types && npm test && npm run build",
