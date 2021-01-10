@@ -50,7 +50,7 @@
     "cypress:open": "cypress open",
     "cypress:parallel": "cypress-parallel -s cypress -t 4 -d -a",
     "changeset": "changeset",
-    "release": "changeset publish",
+    "release": "changeset publish --tag beta --access public ",
     "start:app": "npm run build:esm && npm link && npm --cwd node_modules/react link && npm --cwd ./app link react react-magic-form && npm --cwd ./app && npm --cwd ./app run start"
   },
   "keywords": [
